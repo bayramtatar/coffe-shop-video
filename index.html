@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1366, initial-scale=1.0">
+  <title>Bean Scene Coffee</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Clicker+Script&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #FFFEFC;
+      font-family: 'Playfair Display', serif;
+      color: #603809;
+      width: 100vw;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .navbar {
+      width: 100%;
+      max-width: 1366px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 21px 93px 0 93px;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(96, 56, 9, 0.04);
+      position: relative;
+      z-index: 10;
+    }
+    .navbar .logo {
+      font-family: 'Clicker Script', cursive;
+      font-size: 35px;
+      color: #603809;
+      background: none;
+      padding: 0 20px;
+      border-radius: 10px;
+    }
+    .navbar .nav-links {
+      display: flex;
+      gap: 40px;
+      font-size: 14px;
+      color: #603809;
+    }
+    .navbar .nav-links a {
+      color: #603809;
+      text-decoration: none;
+      font-weight: 500;
+      font-family: 'Playfair Display', serif;
+      transition: color 0.2s;
+    }
+    .navbar .nav-links a:hover {
+      color: #F9C06A;
+    }
+    .navbar .auth {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    .navbar .signin {
+      color: #603809;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .navbar .signup {
+      background: #F9C06A;
+      color: #1E1E1E;
+      border-radius: 24px;
+      padding: 14px 27px;
+      font-weight: 500;
+      font-size: 14px;
+      box-shadow: 0px 6px 12px 0px rgba(249, 192, 106, 0.22);
+      border: none;
+      cursor: pointer;
+      font-family: 'Playfair Display', serif;
+    }
+    .hero {
+      width: 100%;
+      max-width: 1366px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 93px 0 93px;
+      position: relative;
+      min-height: 768px;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1366&q=80') center/cover no-repeat;
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(90deg, #1E1E1E 0%, rgba(0,0,0,0) 100%);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 527px;
+      color: #fff;
+    }
+    .hero-content .subtitle {
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+    .hero-content .title {
+      font-family: 'Clicker Script', cursive;
+      font-size: 220px;
+      color: #fff;
+      margin: 0 0 20px 0;
+      line-height: 1.1;
+    }
+    .hero-content .desc {
+      font-size: 20px;
+      font-weight: 400;
+      margin-bottom: 40px;
+      line-height: 1.7;
+      color: #fff;
+    }
+    .hero-content .order-btn {
+      background: #F9C06A;
+      color: #1E1E1E;
+      border-radius: 24px;
+      padding: 14px 40px;
+      font-weight: 700;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      font-family: 'Playfair Display', serif;
+      box-shadow: 0px 6px 12px 0px rgba(249, 192, 106, 0.22);
+    }
+    .hero-image {
+      width: 600px;
+      height: 600px;
+      background: url('https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=600&q=80') center/cover no-repeat;
+      border-radius: 50%;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+      position: relative;
+      z-index: 2;
+    }
+    /* Responsive */
+    @media (max-width: 1200px) {
+      .navbar, .hero { padding-left: 30px; padding-right: 30px; }
+      .hero-image { width: 400px; height: 400px; }
+    }
+    @media (max-width: 900px) {
+      .navbar, .hero { flex-direction: column; align-items: flex-start; }
+      .hero-image { width: 300px; height: 300px; margin-top: 40px; }
+    }
+    @media (max-width: 600px) {
+      .navbar, .hero { padding: 10px; }
+      .hero-content .title { font-size: 80px; }
+      .hero-image { width: 180px; height: 180px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Tatar Cafe</div>
+    <div class="nav-links">
+      <a href="#">Anasayfa</a>
+      <a href="#">Menü</a>
+      <a href="#">Hakkımızda</a>
+      <a href="#">İletişim</a>
+    </div>
+    <div class="auth">
+      <span class="signin">Giriş Yap</span>
+      <button class="signup">Kayıt Ol</button>
+    </div>
+  </nav>
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="subtitle">Sabahınızı bizimle güzelleştirin</div>
+      <div class="title">Kahve</div>
+      <div class="desc">Güne bir fincan kahveyle başlamak en iyisidir. Hayatınızda tadabileceğiniz en iyi kahve aromalarını keşfedin. Müşterilerimize en iyisini sunuyoruz.</div>
+      <button class="order-btn">Şimdi Sipariş Ver</button>
+    </div>
+    <div class="hero-image"></div>
+  </section>
+  <section class="features" style="background:#FFF9F1; padding:100px 0;">
+    <div style="max-width:1180px; margin:0 auto; display:flex; flex-direction:column; align-items:center;">
+      <div style="font-size:54px; font-weight:700; color:#603809; text-align:center; margin-bottom:24px;">En iyi kahveyi keşfedin</div>
+      <div style="font-size:20px; color:#707070; text-align:center; max-width:600px; margin-bottom:40px;">Tatar Cafe, üretkenliğinizi artıran ve ruh halinizi yükselten kaliteli kahve sunar. Bir fincan kahve içmek güzeldir, ama gerçek kahve içmek daha da güzeldir. Bu kahveyi diğerlerinden daha çok seveceğinizden şüpheniz olmasın.</div>
+      <div style="display:flex; gap:40px; justify-content:center; flex-wrap:wrap;">
+        <div style="background:#FFF9F1; border-radius:24px; box-shadow:0 6px 12px rgba(249,192,106,0.12); width:280px; padding:32px; display:flex; flex-direction:column; align-items:center;">
+          <img src="assets/rectangle5.png" alt="Cappuccino" style="width:100%; border-radius:16px; margin-bottom:16px;">
+          <div style="font-size:22px; font-weight:700; color:#603809;">Cappuccino</div>
+          <div style="font-size:16px; color:#1E1E1E; margin:8px 0;">Kahve %50 | Süt %50</div>
+          <div style="font-size:18px; font-weight:700; color:#603809;">8,50₺</div>
+          <button class="order-btn" style="margin-top:16px; width:100%;">Sipariş Ver</button>
+        </div>
+        <div style="background:#FFF9F1; border-radius:24px; box-shadow:0 6px 12px rgba(249,192,106,0.12); width:280px; padding:32px; display:flex; flex-direction:column; align-items:center;">
+          <img src="assets/coffee-cup-main.png" alt="Chai Latte" style="width:100%; border-radius:16px; margin-bottom:16px;">
+          <div style="font-size:22px; font-weight:700; color:#603809;">Chai Latte</div>
+          <div style="font-size:16px; color:#1E1E1E; margin:8px 0;">Kahve %50 | Süt %50</div>
+          <div style="font-size:18px; font-weight:700; color:#603809;">8,50₺</div>
+          <button class="order-btn" style="margin-top:16px; width:100%;">Sipariş Ver</button>
+        </div>
+        <div style="background:#FFF9F1; border-radius:24px; box-shadow:0 6px 12px rgba(249,192,106,0.12); width:280px; padding:32px; display:flex; flex-direction:column; align-items:center;">
+          <img src="assets/coffee-beans-1.png" alt="Macchiato" style="width:100%; border-radius:16px; margin-bottom:16px;">
+          <div style="font-size:22px; font-weight:700; color:#603809;">Macchiato</div>
+          <div style="font-size:16px; color:#1E1E1E; margin:8px 0;">Kahve %50 | Süt %50</div>
+          <div style="font-size:18px; font-weight:700; color:#603809;">8,50₺</div>
+          <button class="order-btn" style="margin-top:16px; width:100%;">Sipariş Ver</button>
+        </div>
+        <div style="background:#FFF9F1; border-radius:24px; box-shadow:0 6px 12px rgba(249,192,106,0.12); width:280px; padding:32px; display:flex; flex-direction:column; align-items:center;">
+          <img src="assets/badge-1.png" alt="Expresso" style="width:100%; border-radius:16px; margin-bottom:16px;">
+          <div style="font-size:22px; font-weight:700; color:#603809;">Espresso</div>
+          <div style="font-size:16px; color:#1E1E1E; margin:8px 0;">Kahve %50 | Süt %50</div>
+          <div style="font-size:18px; font-weight:700; color:#603809;">8,50₺</div>
+          <button class="order-btn" style="margin-top:16px; width:100%;">Sipariş Ver</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-different" style="background:#FFEED8; padding:100px 0;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="font-size:54px; font-weight:700; color:#603809; text-align:center; margin-bottom:24px;">Neden farklıyız?</div>
+      <div style="display:flex; justify-content:space-between; gap:40px; flex-wrap:wrap;">
+        <div style="flex:1; min-width:220px; background:#FFF9F1; border-radius:24px; padding:32px; display:flex; flex-direction:column; align-items:center;">
+          <img src="assets/coffee-cup-1.png" alt="Üstün Çekirdekler" style="width:88px; height:88px; margin-bottom:16px;">
+          <div style="font-size:28px; font-weight:700; color:#603809;">Üstün Çekirdekler</div>
+          <div style="font-size:20px; color:#707070; text-align:center;">Harika tatlar sunan çekirdekler</div>
+        </div>
+        <div style="flex:1; min-width:220px; background:#FFF9F1; border-radius:24px; padding:32px; display:flex; flex-direction:column; align-items:center;">
+          <img src="assets/badge-1.png" alt="Yüksek Kalite" style="width:88px; height:88px; margin-bottom:16px;">
+          <div style="font-size:28px; font-weight:700; color:#603809;">Yüksek Kalite</div>
+          <div style="font-size:20px; color:#707070; text-align:center;">En yüksek kaliteyi sunuyoruz</div>
+        </div>
+        <div style="flex:1; min-width:220px; background:#FFF9F1; border-radius:24px; padding:32px; display:flex; flex-direction:column; align-items:center;">
+          <img src="assets/coffee-beans-1.png" alt="Olağanüstü" style="width:88px; height:88px; margin-bottom:16px;">
+          <div style="font-size:28px; font-weight:700; color:#603809;">Olağanüstü</div>
+          <div style="font-size:20px; color:#707070; text-align:center;">Daha önce tatmadığınız kahve</div>
+        </div>
+        <div style="flex:1; min-width:220px; background:#FFF9F1; border-radius:24px; padding:32px; display:flex; flex-direction:column; align-items:center;">
+          <img src="assets/best-price-1.png" alt="Uygun Fiyat" style="width:88px; height:88px; margin-bottom:16px;">
+          <div style="font-size:28px; font-weight:700; color:#603809;">Uygun Fiyat</div>
+          <div style="font-size:20px; color:#707070; text-align:center;">Kahve fiyatlarımız herkes için uygun</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="feedback" style="background:#FFF9F1; padding:100px 0;">
+    <div style="max-width:980px; margin:0 auto; text-align:center;">
+      <div style="font-size:54px; font-weight:700; color:#603809; margin-bottom:24px;">Müşteri Yorumları</div>
+      <div style="font-size:20px; color:#707070; margin-bottom:40px;">Müşterilerimiz hakkımızda harika şeyler söylüyor</div>
+      <div style="background:#FFF9F1; border-radius:24px; box-shadow:0 6px 12px rgba(249,192,106,0.12); padding:40px; display:flex; flex-direction:column; align-items:center;">
+        <img src="assets/pngwing-1.png" alt="Müşteri" style="width:112px; height:112px; border-radius:16px; margin-bottom:16px;">
+        <div style="font-size:32px; font-weight:700; color:#603809;">Jonny Thomas</div>
+        <div style="font-size:20px; color:#707070;">Proje Yöneticisi</div>
+        <div style="font-size:18px; color:#603809; margin:24px 0; max-width:600px;">Lorem Ipsum, matbaacılık ve dizgi endüstrisinin basit taklit metnidir. 1500'lerden beri endüstrinin standart sahte metni olmuştur. Bir matbaacı bir hurufat numune kitabı oluşturmak için bir yazı galerisini karıştırdığında ortaya çıkmıştır. Yüzyıllar boyunca değişmeden kalmıştır ve 1960'larda Lorem Ipsum pasajları içeren Letraset yapraklarının yayınlanmasıyla popülerlik kazanmıştır.</div>
+        <img src="assets/vector2.svg" alt="alıntı" style="width:40px; height:40px;">
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#442808; color:#fff; padding:60px 0 0 0;">
+    <div style="max-width:1366px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between; padding:0 93px;">
+      <div style="flex:1; min-width:250px; margin-bottom:40px;">
+        <div style="font-family:'Clicker Script',cursive; font-size:54px; color:#fff;">Tatar Cafe</div>
+        <div style="font-size:14px; color:#fff; margin:24px 0; max-width:380px;">Lorem Ipsum, matbaacılık ve dizgi endüstrisinin basit taklit metnidir. 1500'lerden beri endüstrinin standart sahte metni olmuştur. Bir matbaacı bir hurufat numune kitabı oluşturmak için bir yazı galerisini karıştırdığında ortaya çıkmıştır.</div>
+        <div style="display:flex; gap:16px;">
+          <img src="assets/vector4.svg" alt="ikon1" style="width:24px; height:24px;">
+          <img src="assets/vector6.svg" alt="ikon2" style="width:24px; height:24px;">
+          <img src="assets/vector8.svg" alt="ikon3" style="width:24px; height:24px;">
+          <img src="assets/vector10.svg" alt="ikon4" style="width:24px; height:24px;">
+        </div>
+      </div>
+      <div style="flex:1; min-width:150px; margin-bottom:40px;">
+        <div style="font-size:26px; font-weight:700; color:#fff;">Şirket</div>
+        <div style="font-size:18px; color:#fff; margin:16px 0;">Nasıl Çalışırız<br>Hizmet Şartları<br>Fiyatlandırma<br>Sıkça Sorulan Sorular</div>
+      </div>
+      <div style="flex:1; min-width:150px; margin-bottom:40px;">
+        <div style="font-size:26px; font-weight:700; color:#fff;">Hakkında</div>
+        <div style="font-size:18px; color:#fff; margin:16px 0;">Menü<br>Özellikler<br>Haberler & Bloglar<br>Yardım & Destek</div>
+      </div>
+      <div style="flex:1; min-width:200px; margin-bottom:40px;">
+        <div style="font-size:26px; font-weight:700; color:#fff;">İletişim</div>
+        <div style="font-size:18px; color:#fff; margin:16px 0;">Akşya Mahallesi 1. Blok 1. Cadde, Rammurthy mah., İstanbul-34000<br>+90 555 555 55 55<br>tatarcafe@mail.com<br>www.tatarcafe.com</div>
+      </div>
+    </div>
+    <div style="background:#442808; text-align:center; color:#fff; padding:24px 0; font-size:14px;">© 2024 Tatar Cafe. Tüm hakları saklıdır.</div>
+  </footer>
+</body>
+</html> 
